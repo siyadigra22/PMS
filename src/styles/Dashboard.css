@@ -6,7 +6,7 @@
     width: 100%;
     max-width: 1440px; /* Set maximum width */
     height: 100%;
-    min-height: 1166px; /* Set minimum height */
+    min-height: 1249px; /* Set minimum height */
     margin: 0 auto; /* Center the dashboard */
     padding: 20px; /* Add padding for spacing */
     box-sizing: border-box; 
@@ -160,4 +160,22 @@
 .radial-chart-container {
   padding-left: 20px; /* Adjust this value to move it more to the right */
 }
+
+.ppm-downtime-section {
+  margin-top: 20px;
+}
+
+.chart-container-custom {
+  width: 816px;
+  height: 395px;
+  border-radius: 20px;
+  background: #FFF;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  margin-top: 104px;
+  margin-left: 35px;
+}
+
+
 

@@ -1,12 +1,15 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import Header from './Header'; // Correct path to Header component
-import Metrics from './Metrics/Metrics1'; // Correct path to Metrics component
-import '../../styles/Dashboard.css'; // Correct path to CSS file
-import NewSection from './NewSection'; // Correct path to NewSection component
-import LineChart from './Charts/LineChart'; // Correct path to LineChart component
-import RadialBarChartComponent from './Charts/RadialBarChartComponent'; // Correct path to RadialBarChartComponent
-import PieChartComponent from './Charts/PieChartComponent'; // Correct path to PieChartComponent
+import Header from './Header';
+import Metrics from './Metrics/Metrics1';
+import '../../styles/Dashboard.css';
+import NewSection from './NewSection';
+import LineChart from './Charts/LineChart';
+import RadialBarChartComponent from './Charts/RadialBarChartComponent';
+import PieChartComponent from './Charts/PieChartComponent';
+import DateRangeSelector from './DateRangeSelector';
+import PPMLineChart from './Charts/PPMLineChart'; // New import
+import DowntimeChart from './Charts/DowntimeChart'; // New import
 
 const Dashboard = () => {
   // Sample data for PieChartComponent
@@ -18,11 +21,11 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <Grid container spacing={3}>
-        <Grid item xs={12}>
+        <Grid item xs={12} style={{ marginTop: '-20px' }}>
           <Header />
         </Grid>
 
-        <Grid item xs={12}>
+        <Grid item xs={12} style={{ marginTop: '-30px' }}>
           <NewSection />
         </Grid>
 
@@ -30,8 +33,12 @@ const Dashboard = () => {
           <Metrics />
         </Grid>
 
+        <Grid item xs={12} style={{ marginTop: '10px' }}>
+          <DateRangeSelector />
+        </Grid>
+
         {/* Row for RadialBarChartComponent, LineChart, and PieChartComponent */}
-        <Grid item xs={12}>
+        <Grid item xs={12} style={{ marginTop: '-10px' }}>
           <Grid container spacing={3} justifyContent="space-around">
             <Grid item xs={12} md={4}>
               <div className="chart-container">
@@ -46,6 +53,22 @@ const Dashboard = () => {
             <Grid item xs={12} md={4}>
               <div className="chart-container">
                 <PieChartComponent data={pieChartData} />
+              </div>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        {/* New row for PPM Line Chart and Downtime Chart */}
+        <Grid item xs={12} style={{ marginTop: '10px' }}>
+          <Grid container spacing={3} justifyContent="space-between">
+            <Grid item xs={12} md={8}>
+              <div className="chart-container">
+                <PPMLineChart />
+              </div>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <div className="chart-container">
+                <DowntimeChart />
               </div>
             </Grid>
           </Grid>
