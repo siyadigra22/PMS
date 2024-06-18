@@ -57,6 +57,7 @@ const ProductionChart = () => {
           <span className="chart-subheading-unit">22 June, 2024</span>
         </div>
       </div>
+      
       <div className="chart-container">
         <ResponsiveContainer width="100%" height={300}>
           <AreaChart data={data}>
@@ -79,6 +80,7 @@ const ProductionChart = () => {
                 fontWeight: 400,
                 lineHeight: 'normal'
               }}
+              interval={1} // Display every other day
             />
             <YAxis 
               tick={{ 
@@ -92,6 +94,8 @@ const ProductionChart = () => {
                 fontWeight: 400,
                 lineHeight: 'normal'
               }}
+              tickFormatter={(value) => `${value / 1000}k`} // Format Y-axis ticks as 1k, 3k, 5k, etc.
+              domain={[0, 'dataMax + 1000']} // Adjust domain if necessary
             />
             <Tooltip content={<CustomTooltip />} />
             <Area

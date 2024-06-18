@@ -48,10 +48,13 @@ const PPMLineChart = () => {
       <ResponsiveContainer width="100%" height={300}>
         <AreaChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
           <defs>
-          <linearGradient id="gradientColor" x1="0" y1="0" x2="0" y2="1">
-  <stop offset="-13.49%" stopColor="#F3F0FF" stopOpacity="0.5" />
-  <stop offset="98.07%" stopColor="rgba(241, 237, 255, 0)" stopOpacity="0.1" />
-</linearGradient>
+          <defs>
+        <linearGradient id="gradientColor" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#F3F0FF" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="rgba(241, 237, 255, 0)" stopOpacity="0.1" />
+        </linearGradient>
+        </defs>
+
 
           </defs>
           <XAxis 
@@ -71,7 +74,7 @@ const PPMLineChart = () => {
             type="monotone"
             dataKey="value"
             stroke="#4318FF"
-            fill="linear-gradient(180deg, #F3F0FF -13.49%, rgba(241, 237, 255, 0.00) 98.07%);"
+            fill="#F3F0FF"
           />
           <Line 
             type="monotone" 

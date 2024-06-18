@@ -17,7 +17,7 @@ const Metrics = () => {
   ];
 
   return (
-    <div className="metrics-container">
+    <div className="metrics-container" style={{ display: 'flex', gap: '0px' }}>
       {metrics.map((metric, index) => (
         <div
           key={index}
@@ -28,7 +28,7 @@ const Metrics = () => {
           <Paper
             elevation={3}
             className="p-4 bg-[#F4F7FE] flex items-center justify-center"
-            style={index <= 4 ? { width: '230.115px', height: '97px', borderRadius: '20px', background: '#FFF', flexShrink: 0 } : {}}
+            style={index <= 4 ? { width: '230.115px', height: '97px', borderRadius: '20px', background: '#FFF', flexShrink: 0, margin: '0' } : {}}
           >
             {/* Render the icon based on index */}
             {index === 0 && <img src={Icon} alt="Icon" style={{ width: '32.842px', height: '32.842px', marginRight: '8px', color: metric.color }} />}
@@ -37,7 +37,7 @@ const Metrics = () => {
             {index === 3 && <img src={Icon3} alt="Icon" style={{ width: '32.842px', height: '32.842px', marginRight: '8px', color: metric.color }} />}
             {index === 4 && <img src={Icon4} alt="Icon" style={{ width: '32.842px', height: '32.842px', marginRight: '8px', color: metric.color }} />}
 
-            <div className="ml-4"> {/* Add margin to create space between icon and text */}
+            <div className="ml-2"> {/* Reduced margin to create space between icon and text */}
               <Typography
                 variant="h6"
                 style={{
